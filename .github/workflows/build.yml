@@ -17,6 +17,9 @@ jobs:
           java-version: "17"
           distribution: temurin
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
         with:
