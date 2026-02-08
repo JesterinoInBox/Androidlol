@@ -43,7 +43,6 @@ android {
             manifest.srcFile("src/main/AndroidManifest.xml")
         }
     }
-}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
