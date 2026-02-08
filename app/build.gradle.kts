@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.lovevera"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.lovevera"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -43,7 +43,6 @@ android {
             manifest.srcFile("src/main/AndroidManifest.xml")
         }
     }
-}
 
 dependencies {
     implementation(libs.androidx.core.ktx)
@@ -54,4 +53,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+
+// Exclude Android-only sample source from JVM build used in CI
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    exclude("MainActivity.kt")
 }
